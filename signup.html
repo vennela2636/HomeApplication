@@ -12,7 +12,7 @@
     <div><img src="images\detailed-click-collect-sign_23-2148779338.jpg" class="logo"></div>
   <h2>SIGN UP</h2>
     <h5>Lets make your experience fast and 100% free </h5>
-    <form action="login.html">
+    <form action="" method="post">
        
       <div class="input-group">
           <label for="email" class="required">Email:</label>
@@ -48,7 +48,25 @@
       </select>
     </div>
 
-       <script>
+      
+    <div class="checkbox-group">
+      <input type="checkbox" required> I agree to the Terms & Conditions
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <button type="submit" class="submit-btn" id="reg">Register</button>
+      <button type="reset" class="reset-btn">Reset</button>
+    </div>    
+        
+
+       
+        <p class="login-link" >Already have an Account? <a href="login.html">Login</a></p>
+    </form>
+</section>
+
+
+ <script>
     function togglePassword() {
       const passwordField = document.getElementById("password");
       const icon = document.querySelector(".toggle-password");
@@ -62,22 +80,22 @@
       }
     }
 
+document.getElementById('reg').addEventListener('click',()=>{
+
+ 
+// window.location.href='login.html'
+const pword = document.getElementById('password').value;
+const email = document.getElementById('email').value;
+  console.log(pword);
+console.log(email);
+
+localStorage.setItem("email",email);
+localStorage.setItem('pword',pword);
+
+})
+
+
 	
   </script>
-    <div class="checkbox-group">
-      <input type="checkbox" required> I agree to the Terms & Conditions
-    </div>
-
-    <!-- Buttons -->
-    <div class="button-group">
-      <button type="submit" class="submit-btn">Register</button>
-      <button type="reset" class="reset-btn">Reset</button>
-    </div>    
-        
-
-       
-        <p class="login-link" >Already have an Account? <a href="login.html">Login</a></p>
-    </form>
-</section>
   </body>
 </html>
