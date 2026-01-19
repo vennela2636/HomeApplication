@@ -5,12 +5,6 @@ EliteMart is ideal for launching a professional online store.
 
 ![Login Page Screenshot](images/detailed-click-collect-sign_23-2148779338.jpg)
 
-## 🎥 Demo Video
-
-[Click here to watch the video](https://drive.google.com/uc?export=download&id=1F2vNva_NU5v1achjCBuLyKrc0TdpMi8A)
-
-
-
 # 🌐 My Web Project
 
 This is a simple **web project** built using **HTML, CSS, Bootstrap 5, and Font Awesome**.  
@@ -43,9 +37,6 @@ This project is a **responsive navigation bar** that includes:
 - 🎨 Easily customizable with CSS
 
 
-
-
-vedios/E-COMMERCE WEBSITE and 2 more pages - Personal - Microsoft​ Edge 2025-08-17 11-39-55.mp4
 
 # 📝 Sign-Up Page (HTML, CSS, JS)
 
