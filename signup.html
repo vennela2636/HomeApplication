@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,3 +141,106 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<section class="container">
+    <div><img src="images\detailed-click-collect-sign_23-2148779338.jpg" class="logo"></div>
+  <h2>SIGN UP</h2>
+    <h5>Lets make your experience fast and 100% free </h5>
+    <form action="" method="post">
+       
+      <div class="input-group">
+          <label for="email" class="required">Email:</label>
+          <input type="email" name="email" id="email" placeholder="  Enter Email" required>
+        </div>
+        <div class="password-container">
+        <div class="input-group">
+        <label for="password" class="required">Password:</label>
+        <input type="password" id="password" name="password" minlength="10" placeholder="  Enter password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+         <div class="input-group" >
+        <label for="password" class="required">Password:</label>
+        <input type="password" id="password" name="password" minlength="10" placeholder="  Confirm password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
+         <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+       </div>
+        <div class="input-group">
+      <label>Phone Number</label>
+      <input type="tel" id="tel" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+    </div>
+    <div class="input-group">
+      <label>Date of Birth</label>
+      <input type="date"  id="date">
+    </div>
+    <div class="input-group">
+      <label>Gender</label>
+      <select  id="gender" >
+        <option value="">Select gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+      
+    <div class="checkbox-group">
+      <input type="checkbox" required> I agree to the Terms & Conditions
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <button type="submit" class="submit-btn" id="reg">Register</button>
+      <button type="reset" class="reset-btn">Reset</button>
+    </div>    
+        
+
+       
+        <p class="login-link" >Already have an Account? <a href="login.html">Login</a></p>
+    </form>
+</section>
+
+
+ <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("password");
+      const icon = document.querySelector(".toggle-password");
+
+      if (passwordField.type === "password") {
+        passwordField.type = "text"; // Show password
+        icon.textContent = "  "; // Change icon
+      } else {
+        passwordField.type = "password"; // Hide password
+        icon.textContent = "👁️"; // Change icon
+      }
+    }
+
+document.getElementById('reg').addEventListener('click',()=>{
+
+ 
+// window.location.href='login.html'
+const pword = document.getElementById('password').value;
+const email = document.getElementById('email').value;
+  console.log(pword);
+console.log(email);
+
+localStorage.setItem("email",email);
+localStorage.setItem('pword',pword);
+
+})
+
+
+	
+  </script>
+  </body>
+</html>
+>>>>>>> b407ab8676dd49493d47a2286f952757c4d162df
