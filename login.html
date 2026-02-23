@@ -12,7 +12,7 @@
     <div><img src="images\detailed-click-collect-sign_23-2148779338.jpg" class="logo"></div>
   <h2>LOG IN</h2>
    
-    <form action="dashboard.html" method="post">
+    <form action="#">
        
       <div class="input-group">
           <label for="email" class="required">Email:</label>
@@ -30,7 +30,15 @@
          <span class="toggle-password" onclick="togglePassword()">👁️</span>
         </div>
        </div>
-       <script>
+        
+        
+
+        <button type="SUBMIT" id="login"><a href="index.html">LOG IN</a></button>
+       <!-- <object data="index.html" type="text/html" width="100%" height="300"></object> -->
+
+</section>
+<br>
+<script>
     function togglePassword() {
       const passwordField = document.getElementById("password");
       const icon = document.querySelector(".toggle-password");
@@ -43,12 +51,37 @@
         icon.textContent = "👁️"; // Change icon
       }
     }
-  </script>
-        
-        
 
-        <button type="SUBMIT">LOG IN</button>
-       
-</section>
+    document.getElementById('login').addEventListener('click',()=>{
+     const email= document.getElementById('email').value;
+      const pword =document.getElementById('password').value;
+      console.log('called');
+      
+      const cemail = localStorage.getItem('email');
+      const cpword = localStorage.getItem('pword');
+
+const output =document.createElement('p');
+const a =document.createElement('a')
+      if(cemail===email && cpword===pword){
+       output .innerText='Logged in successfully click here to explore';
+       a.href='index.html';
+        a.innerText="explore";
+      }
+      else{
+        output.innerText="Invalid credentials";
+        a.href='login.html'
+        a.innerText='re enter';
+      }
+
+      output.appendChild(a);
+      document.querySelector('body').append(output);
+     
+
+
+
+    })
+
+  </script>
+     
   </body>
 </html>

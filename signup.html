@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <link rel="stylesheet" href="style1.css">
 </head>
+
 <body>
 
-<section class="container">
+  <section class="container">
     <div><img src="images\detailed-click-collect-sign_23-2148779338.jpg" class="logo"></div>
-  <h2>SIGN UP</h2>
+    <h2>SIGN UP</h2>
     <h5>Lets make your experience fast and 100% free </h5>
-    <form action="dashboard.html" method="post">
-       
-      <div class="input-group">
-          <label for="email" class="required">Email:</label>
-          <input type="email" name="email" id="email" placeholder="  Enter Email" required>
-        </div>
-        <div class="password-container">
-        <div class="input-group">
-        <label for="password" class="required">Password:</label>
-        <input type="password" id="password" name="password" minlength="10" placeholder="  Enter password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
-        <span class="toggle-password" onclick="togglePassword()">👁️</span>
-      </div>
-         <div class="input-group" >
-        <label for="password" class="required">Password:</label>
-        <input type="password" id="password" name="password" minlength="10" placeholder="  Confirm password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
-         <span class="toggle-password" onclick="togglePassword()">👁️</span>
-        </div>
-       </div>
-        <div class="input-group">
-      <label>Phone Number</label>
-      <input type="tel" id="tel" placeholder="Enter phone number" pattern="[0-9]{10}" required>
-    </div>
-    <div class="input-group">
-      <label>Date of Birth</label>
-      <input type="date"  id="date">
-    </div>
-    <div class="input-group">
-      <label>Gender</label>
-      <select  id="gender" >
-        <option value="">Select gender</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
-    </div>
+    <form action="" method="post">
 
-       <script>
+      <div class="input-group">
+        <label for="email" class="required">Email:</label>
+        <input type="email" name="email" id="email" placeholder="  Enter Email" required>
+      </div>
+      <div class="password-container">
+        <div class="input-group">
+          <label for="password" class="required">Password:</label>
+          <input type="password" id="password" name="password" minlength="10" placeholder="  Enter password" required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
+          <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        <div class="input-group">
+          <label for="password" class="required">Password:</label>
+          <input type="password" id="password" name="password" minlength="10" placeholder="  Confirm password" required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
+          <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Phone Number</label>
+        <input type="tel" id="tel" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+      </div>
+      <div class="input-group">
+        <label>Date of Birth</label>
+        <input type="date" id="date">
+      </div>
+      <div class="input-group">
+        <label>Gender</label>
+        <select id="gender">
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+
+      <div class="checkbox-group">
+        <input type="checkbox" required> I agree to the Terms & Conditions
+      </div>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="submit" class="submit-btn" id="reg"><a href="login.html">Register</a></button>
+        <button type="reset" class="reset-btn">Reset</button>
+      </div>
+
+
+
+      <p class="login-link">Already have an Account? <a href="login.html">Login</a></p>
+    </form>
+  </section>
+
+
+  <script>
     function togglePassword() {
       const passwordField = document.getElementById("password");
       const icon = document.querySelector(".toggle-password");
@@ -61,21 +83,60 @@
         icon.textContent = "👁️"; // Change icon
       }
     }
+
+
+    function User(name, email, password, phone) {
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.phone = phone;
+}
+
+    // document.getElementById('reg').addEventListener('click', (e) => {
+    //   e.preventDefault()
+    //   // window.location.href='login.html'
+    //   const pword = document.getElementById('password').value;
+    //   const email = document.getElementById('email').value;
+    //   console.log(pword);
+    //   console.log(email);
+
+    //   localStorage.setItem("email", email);
+    //   localStorage.setItem('pword', pword);
+
+    // })
+
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+
+    event.preventDefault(); // prevent default form submit
+
+    // Get form values
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value;
+
+    // Create object using constructor
+    let newUser = new User(name, email, password, phone);
+
+    // Get existing users (if any)
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Push new user
+    users.push(newUser);
+
+    // Store updated array back to localStorage
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Signup Successful!");
+
+    // ✅ Redirect to Login Page
+    window.location.href = "login.html";
+});
+
+
+
+
   </script>
-    <div class="checkbox-group">
-      <input type="checkbox" required> I agree to the Terms & Conditions
-    </div>
+</body>
 
-    <!-- Buttons -->
-    <div class="button-group">
-      <button type="submit" class="submit-btn">Register</button>
-      <button type="reset" class="reset-btn">Reset</button>
-    </div>    
-        
-
-       
-        <p class="login-link" >Already have an Account? <a href="login.html">Login</a></p>
-    </form>
-</section>
-  </body>
 </html>
