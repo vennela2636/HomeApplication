@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,92 +86,4 @@ const a =document.createElement('a')
      
   </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log in</title>
-  <link rel="stylesheet" href="style2.css">
-</head>
-<body>
 
-<section class="container">
-    <div><img src="images\detailed-click-collect-sign_23-2148779338.jpg" class="logo"></div>
-  <h2>LOG IN</h2>
-   
-    <form action="#">
-       
-      <div class="input-group">
-          <label for="email" class="required">Email:</label>
-          <input type="email" name="email" id="email" placeholder="  Enter Email" required>
-        </div>
-        <div class="password-container">
-        <div class="input-group">
-        <label for="password" class="required">Password:</label>
-        <input type="password" id="password" name="password" minlength="10" placeholder="  Enter password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
-        <span class="toggle-password" onclick="togglePassword()">👁️</span>
-      </div>
-         <div class="input-group" >
-        <label for="password" class="required">Password:</label>
-        <input type="password" id="password" name="password" minlength="10" placeholder="  Confirm password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}">
-         <span class="toggle-password" onclick="togglePassword()">👁️</span>
-        </div>
-       </div>
-        
-        
-
-        <button type="SUBMIT" id="login">LOG IN</button>
-       <!-- <object data="index.html" type="text/html" width="100%" height="300"></object> -->
-
-</section>
-<br>
-<script>
-    function togglePassword() {
-      const passwordField = document.getElementById("password");
-      const icon = document.querySelector(".toggle-password");
-
-      if (passwordField.type === "password") {
-        passwordField.type = "text"; // Show password
-        icon.textContent = "  "; // Change icon
-      } else {
-        passwordField.type = "password"; // Hide password
-        icon.textContent = "👁️"; // Change icon
-      }
-    }
-
-    document.getElementById('login').addEventListener('click',()=>{
-     const email= document.getElementById('email').value;
-      const pword =document.getElementById('password').value;
-      console.log('called');
-      
-      const cemail = localStorage.getItem('email');
-      const cpword = localStorage.getItem('pword');
-
-const output =document.createElement('p');
-const a =document.createElement('a')
-      if(cemail===email && cpword===pword){
-       output .innerText='Logged in successfully click here to explore';
-       a.href='index.html';
-        a.innerText="explore";
-      }
-      else{
-        output.innerText="Invalid credentials";
-        a.href='login.html'
-        a.innerText='re enter';
-      }
-
-      output.appendChild(a);
-      document.querySelector('body').append(output);
-     
-
-
-
-    })
-
-  </script>
-     
-  </body>
-</html>
->>>>>>> b407ab8676dd49493d47a2286f952757c4d162df
